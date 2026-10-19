@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Linework · Greywire Studio</title>
+  <meta name="description" content="How the Linework series works: pedals linked in a loop to Switchyard, which changes every pedal's settings for each part of each song.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="32" height="32">Greywire <span>Studio</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="linework.html" aria-current="page">Linework</a>
+        <a href="flashover.html">Flashover</a>
+        <a href="switchyard.html">Switchyard</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <p class="eyebrow">The Linework series</p>
+        <h1>How Linework works</h1>
+        <p class="lead">Your guitar signal goes through the pedals the way it always has. Alongside it, a small control loop links every pedal to Switchyard, so one tap can change the whole board.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Two paths on one board</h2>
+        <div class="diagram">
+          <svg viewBox="0 0 760 270" role="img" aria-labelledby="dia-title dia-desc" font-family="Space Grotesk, Arial, sans-serif">
+            <title id="dia-title">Linework connections</title>
+            <desc id="dia-desc">The guitar signal runs from the guitar through Flashover and another Linework pedal to the amp. Separately, Switchyard's control loop runs out to Flashover, on to the next pedal, and back to Switchyard. A phone connects to Switchyard over USB.</desc>
+            <defs>
+              <marker id="arrow-c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#d07a3e"/></marker>
+              <marker id="arrow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#9ba0a6"/></marker>
+            </defs>
+
+            <!-- Audio path -->
+            <g font-size="15" fill="#e8e6e1" text-anchor="middle">
+              <rect x="10" y="30" width="110" height="50" rx="8" fill="#24282d" stroke="#3a4046"/>
+              <text x="65" y="60">Guitar</text>
+              <rect x="210" y="30" width="130" height="50" rx="8" fill="#8f4120" stroke="#c0602f"/>
+              <text x="275" y="60">Flashover</text>
+              <rect x="430" y="30" width="130" height="50" rx="8" fill="#24282d" stroke="#3a4046"/>
+              <text x="495" y="60">Next pedal</text>
+              <rect x="640" y="30" width="110" height="50" rx="8" fill="#24282d" stroke="#3a4046"/>
+              <text x="695" y="60">Amp</text>
+            </g>
+            <g stroke="#9ba0a6" stroke-width="3" marker-end="url(#arrow-g)">
+              <line x1="120" y1="55" x2="206" y2="55"/>
+              <line x1="340" y1="55" x2="426" y2="55"/>
+              <line x1="560" y1="55" x2="636" y2="55"/>
+            </g>
+            <text x="380" y="18" font-size="12" fill="#9ba0a6" text-anchor="middle" letter-spacing="2">AUDIO</text>
+
+            <!-- Control loop -->
+            <g font-size="15" fill="#e8e6e1" text-anchor="middle">
+              <rect x="210" y="200" width="130" height="56" rx="8" fill="#253a47" stroke="#3d5b6e"/>
+              <text x="275" y="233">Switchyard</text>
+              <rect x="10" y="200" width="110" height="56" rx="8" fill="#24282d" stroke="#3a4046"/>
+              <text x="65" y="233">Phone</text>
+            </g>
+            <line x1="120" y1="228" x2="206" y2="228" stroke="#9ba0a6" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+            <text x="163" y="218" font-size="12" fill="#9ba0a6" text-anchor="middle">USB</text>
+            <g fill="none" stroke="#d07a3e" stroke-width="3" marker-end="url(#arrow-c)">
+              <path d="M250 200 V84"/>
+              <path d="M320 80 V130 H470 V84"/>
+              <path d="M520 80 V228 H344"/>
+            </g>
+            <text x="540" y="170" font-size="12" fill="#d07a3e" letter-spacing="2">CONTROL LOOP</text>
+          </svg>
+        </div>
+        <div class="grid two">
+          <div class="card">
+            <h3>The audio path</h3>
+            <p class="muted">Guitar, pedals, amp, in whatever order you like. Flashover's sound is fully analog; the digital parts only turn its knobs and switches.</p>
+          </div>
+          <div class="card">
+            <h3>The control loop</h3>
+            <p class="muted">Short 3.5 mm cables run from Switchyard to the first pedal, pedal to pedal, and back to Switchyard. Because the loop comes back, Switchyard hears every pedal and can tell you if a cable comes loose.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>From setlist to stage</h2>
+        <div class="grid three" style="margin-top: 24px;">
+          <div class="card">
+            <span class="num">01 · At home</span>
+            <h3>Build your setlist</h3>
+            <p class="muted">In the app, list your songs and split each into parts: intro, verse, chorus, solo.</p>
+          </div>
+          <div class="card">
+            <span class="num">02 · At home</span>
+            <h3>Dial in each part</h3>
+            <p class="muted">For each part, set every pedal: on or off, every knob, every switch. The app saves each distinct sound once and reuses it.</p>
+          </div>
+          <div class="card">
+            <span class="num">03 · On stage</span>
+            <h3>Tap through the show</h3>
+            <p class="muted">Switchyard's Up and Down footswitches move from part to part. Every pedal changes instantly, with no phone or network needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Works with what you have</h2>
+        <ul class="ticks">
+          <li>Every Linework pedal works on its own as a normal pedal.</li>
+          <li>Physical knobs never fight the presets: turn a knob and it picks up from the current setting.</li>
+          <li>Switchyard has an extra MIDI output that sends program changes to MIDI pedals from other brands.</li>
+          <li>Switchyard keeps your setlist in its own memory and resumes where you left off when powered up.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Cherry Blossom Development. Greywire Studio, Linework, Flashover and Switchyard are working names.</p>
+      <p><a href="https://github.com/Cherry-Blossom-Development/GreywireStudio">Design files on GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
