@@ -57,9 +57,9 @@ Commit the change, then from Git Bash in this folder:
 
 It copies the HTML, `css/` and `img/` to the server, replacing the old files. It needs the SSH key at `~/.ssh/Hostgator-Key-1.pem`, the same one the Breakroom deploy uses.
 
-### Getting the certificate (one time)
+### Getting the certificate (one time, done Oct 19, 2026)
 
-Once the Porkbun DNS points at the server, on the server:
+This was run on the server once the Porkbun DNS pointed there. Only rerun it if the site is ever moved to a new server:
 
 ```
 sudo certbot --nginx -d greywirestudio.com -d www.greywirestudio.com
