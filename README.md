@@ -12,6 +12,7 @@ It's a plain static site: HTML and CSS, no build step and no JavaScript. Any sta
 | `linework.html` | How the system works: audio path, control loop, setlist to stage |
 | `flashover.html` | Flashover distortion / overdrive |
 | `switchyard.html` | Switchyard control pedal |
+| `ideas.html` | Analog pedals being considered for the series, by effect type |
 | `about.html` | The brand, where each product stands, link to the design files |
 | `404.html` | Page-not-found (uses root-relative links, so it works at any path) |
 
