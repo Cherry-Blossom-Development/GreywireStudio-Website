@@ -36,11 +36,35 @@ then go to http://localhost:8000.
 - Product names are working names until the trademark filings are done.
 - Don't promise recording or paid effect downloads; both need a patent check first (see `IP_RESEARCH.md` in the GreywireStudio repo).
 
-## Hosting (not set up yet)
+## Hosting
 
-Once the domain is bought, the simplest options are:
+The site runs on the same EC2 server as the other Cherry Blossom Development sites (Amazon Linux, 44.225.148.34), served by the host nginx.
 
-- **GitHub Pages:** turn on Pages for this repository, add a `CNAME` file containing `greywirestudio.com`, and point the domain's DNS at GitHub.
-- **The existing EC2 server:** add an nginx site serving this folder, with a certificate from Let's Encrypt.
+| What | Where |
+| --- | --- |
+| Domain | greywirestudio.com, registered at Porkbun. DNS: `A` records for `greywirestudio.com` and `www` pointing to 44.225.148.34 |
+| Files on the server | `/var/www/greywirestudio.com` (owned by `ec2-user`) |
+| nginx config | `/etc/nginx/conf.d/greywirestudio.com.conf`. The starting version is `nginx/greywirestudio.com.conf` here; certbot adds the HTTPS parts on the server |
+| Certificate | Let's Encrypt via `certbot --nginx`, renewed automatically by the server's `certbot-renew` timer |
+
+### Publishing changes
+
+Commit the change, then from Git Bash in this folder:
+
+```
+./deploy.sh
+```
+
+It copies the HTML, `css/` and `img/` to the server, replacing the old files. It needs the SSH key at `~/.ssh/Hostgator-Key-1.pem`, the same one the Breakroom deploy uses.
+
+### Getting the certificate (one time)
+
+Once the Porkbun DNS points at the server, on the server:
+
+```
+sudo certbot --nginx -d greywirestudio.com -d www.greywirestudio.com
+```
+
+Certbot adds the HTTPS server block and the redirect from HTTP to HTTPS.
 
 Fonts come from Google Fonts (Space Grotesk and IBM Plex Mono).
