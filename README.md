@@ -16,7 +16,7 @@ It's a plain static site: HTML and CSS, no build step and no JavaScript. Any sta
 | `about.html` | The brand, where each product stands, link to the design files |
 | `404.html` | Page-not-found (uses root-relative links, so it works at any path) |
 
-Shared styles are in `css/site.css`. The logo and pedal illustrations are hand-written SVGs in `img/`; the pedal drawings are illustrations, not final designs.
+Shared styles are in `css/site.css`. The logo and pedal illustrations are SVGs in `img/`; the pedal drawings are illustrations, not final designs. The four planned pedals (Tap Changer, Three Phase, Rolling Blackout, Double Circuit) are drawn by `tools/make_pedal_svgs.py`, and their controls are placeholders until each pedal is designed: edit the script and rerun it rather than editing those SVGs by hand.
 
 The header and footer are repeated in every page. When adding a page, copy an existing one and set `aria-current="page"` on its menu link.
 
