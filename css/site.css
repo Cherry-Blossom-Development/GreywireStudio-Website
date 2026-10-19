@@ -253,3 +253,14 @@ ul.ticks li::before {
   margin-top: 0.9em;
 }
 .idea dd { margin: 0.2em 0 0; color: var(--muted); }
+
+.grid.four { grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); }
+
+.card.mini { display: block; padding: 18px 20px; color: var(--text); text-decoration: none; }
+.card.mini:hover { border-color: var(--muted); color: var(--text); }
+.card.mini strong { display: block; font-size: 1.05rem; }
+.card.mini span { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); }
+
+.idea .type { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); margin: -0.3em 0 0.8em; }
+.idea[id] { scroll-margin-top: 90px; }
+.grid.pair { grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); }
