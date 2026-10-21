@@ -98,6 +98,9 @@ p { margin: 0 0 1em; }
 }
 .site-nav a:hover { color: var(--text); }
 .site-nav a[aria-current="page"] { color: var(--text); border-bottom-color: var(--copper); }
+/* Sign in goes to the community site; copper marks it as the way in */
+.site-nav a.nav-signin { color: var(--copper-soft); }
+.site-nav a.nav-signin:hover { color: var(--text); }
 
 /* Sections */
 
