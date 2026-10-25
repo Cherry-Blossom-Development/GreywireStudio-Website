@@ -283,3 +283,19 @@ ul.ticks li::before {
 @media (max-width: 720px) {
   .idea.with-art { grid-template-columns: 80px 1fr; gap: 16px; }
 }
+
+/* Your Opinion page */
+
+.spec.costs th { width: auto; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); font-weight: 500; }
+.spec.costs td { padding-right: 16px; font-size: 0.92rem; }
+.spec.costs td:first-child { color: var(--text); width: 30%; }
+.spec.costs td:last-child { padding-right: 0; width: 24%; }
+#surveys { scroll-margin-top: 70px; }
+
+.survey-card { display: block; color: var(--text); text-decoration: none; }
+.survey-card:hover { border-color: var(--muted); color: var(--text); }
+.survey-card .status { margin-bottom: 14px; }
+
+@media (max-width: 720px) {
+  .spec.costs td { font-size: 0.85rem; padding-right: 10px; }
+}

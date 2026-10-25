@@ -13,6 +13,8 @@ It's a plain static site: HTML and CSS, no build step and no JavaScript. Any sta
 | `flashover.html` | Flashover distortion / overdrive |
 | `switchyard.html` | Switchyard control pedal |
 | `ideas.html` | What's next: the four named pedals in planning, then further ideas by effect type |
+| `opinion.html` | Your Opinion: how the surveys work, the privacy promise, what a new product costs, and the list of surveys |
+| `survey-musician.html`, `survey-gear.html`, `survey-sounds.html` | One page per survey; "coming soon" placeholders for now |
 | `about.html` | The brand, where each product stands, link to the design files |
 | `404.html` | Page-not-found (uses root-relative links, so it works at any path) |
 
