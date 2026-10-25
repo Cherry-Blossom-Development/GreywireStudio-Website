@@ -2,7 +2,7 @@
 
 The website for Greywire Studio and its Linework series of guitar pedals, planned for **greywirestudio.com** (the domain isn't bought yet). The pedal designs themselves are in the [GreywireStudio](https://github.com/Cherry-Blossom-Development/GreywireStudio) repository.
 
-It's a plain static site: HTML and CSS, no build step and no JavaScript. Any static host can serve it as is.
+It's a plain static site: HTML and CSS, no build step and no JavaScript. The one exception to "static" is the surveys: their forms post to `/api/surveys/<name>`, which nginx passes to the Breakroom backend (`backend/routes/surveys.js` there). The backend saves the answers and redirects back to `survey-thanks.html`. A survey's field names and values must match its definition in Breakroom's `backend/utilities/surveys.js`.
 
 ## Pages
 
@@ -14,7 +14,9 @@ It's a plain static site: HTML and CSS, no build step and no JavaScript. Any sta
 | `switchyard.html` | Switchyard control pedal |
 | `ideas.html` | What's next: the four named pedals in planning, then further ideas by effect type |
 | `opinion.html` | Your Opinion: how the surveys work, the privacy promise, what a new product costs, and the list of surveys |
-| `survey-musician.html`, `survey-gear.html`, `survey-sounds.html` | One page per survey; "coming soon" placeholders for now |
+| `survey-musician.html` | The "What kind of musician are you" survey form |
+| `survey-gear.html`, `survey-sounds.html` | "Coming soon" placeholders for the next surveys |
+| `survey-thanks.html` | Where a survey lands after it's sent |
 | `about.html` | The brand, where each product stands, link to the design files |
 | `404.html` | Page-not-found (uses root-relative links, so it works at any path) |
 

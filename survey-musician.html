@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>What kind of musician are you · Greywire Studio</title>
-  <meta name="description" content="What kind of musician are you: a Greywire Studio survey, coming soon.">
+  <meta name="description" content="A short, anonymous survey about how and what you play. Your answers help Greywire Studio decide which pedals to build.">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,12 +34,127 @@
       <div class="wrap">
         <p class="eyebrow">Your Opinion · Survey</p>
         <h1>What kind of musician are you</h1>
-        <p><span class="status">Coming soon</span></p>
-        <p class="lead">This survey isn't ready yet. It will ask about what you play, how long you've played and where you play: at home, in the studio or on stage.</p>
-        <p class="muted">Like every Greywire survey, your answers will be used only by us to decide what to build. They're never sold or shared, and they aren't tied to your name.</p>
-        <div class="buttons">
-          <a class="button ghost" href="opinion.html#surveys">Back to all surveys</a>
-        </div>
+        <p class="lead">Nine quick questions about what you play, where and how often. Every question is optional, so skip anything you'd rather not answer.</p>
+        <p class="muted">Your answers are used only by Greywire Studio, never sold or shared, and aren't tied to your name. <a href="opinion.html#how-it-works">How we keep the numbers honest</a></p>
+      </div>
+    </section>
+
+    <section class="section survey">
+      <div class="wrap">
+        <p class="form-error" id="empty">Nothing was answered, so nothing was saved. Pick at least one answer, then send it again.</p>
+        <p class="form-error" id="failed">Sorry, your answers couldn't be saved. Please try sending them again in a minute.</p>
+        <form method="post" action="/api/surveys/musician">
+          <fieldset class="question">
+            <legend><span class="num">01</span>What do you play? <span class="q-hint">Tick all that apply</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="plays" value="electric-guitar"><span>Electric guitar</span></label>
+              <label class="choice"><input type="checkbox" name="plays" value="acoustic-guitar"><span>Acoustic guitar</span></label>
+              <label class="choice"><input type="checkbox" name="plays" value="bass"><span>Bass</span></label>
+              <label class="choice"><input type="checkbox" name="plays" value="keys"><span>Keys / synth</span></label>
+              <label class="choice"><input type="checkbox" name="plays" value="drums"><span>Drums</span></label>
+              <label class="choice"><input type="checkbox" name="plays" value="vocals"><span>Vocals</span></label>
+              <label class="choice"><input type="checkbox" name="plays" value="other"><span>Other</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">02</span>Your main instrument</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="main" value="electric-guitar"><span>Electric guitar</span></label>
+              <label class="choice"><input type="radio" name="main" value="acoustic-guitar"><span>Acoustic guitar</span></label>
+              <label class="choice"><input type="radio" name="main" value="bass"><span>Bass</span></label>
+              <label class="choice"><input type="radio" name="main" value="keys"><span>Keys / synth</span></label>
+              <label class="choice"><input type="radio" name="main" value="drums"><span>Drums</span></label>
+              <label class="choice"><input type="radio" name="main" value="vocals"><span>Vocals</span></label>
+              <label class="choice"><input type="radio" name="main" value="other"><span>Other</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">03</span>How long have you been playing?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="years" value="under-1"><span>Under 1 year</span></label>
+              <label class="choice"><input type="radio" name="years" value="1-5"><span>1–5 years</span></label>
+              <label class="choice"><input type="radio" name="years" value="5-10"><span>5–10 years</span></label>
+              <label class="choice"><input type="radio" name="years" value="10-20"><span>10–20 years</span></label>
+              <label class="choice"><input type="radio" name="years" value="20-plus"><span>More than 20 years</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">04</span>How would you describe yourself?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="level" value="starting"><span>Just starting out</span></label>
+              <label class="choice"><input type="radio" name="level" value="hobbyist"><span>Hobbyist</span></label>
+              <label class="choice"><input type="radio" name="level" value="gigging"><span>Gigging musician</span></label>
+              <label class="choice"><input type="radio" name="level" value="professional"><span>Professional / session</span></label>
+              <label class="choice"><input type="radio" name="level" value="producer"><span>Producer / home recording</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">05</span>Where do you play most? <span class="q-hint">Tick all that apply</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="where" value="home"><span>At home</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="recording"><span>Recording</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="rehearsals"><span>Band rehearsals</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="live"><span>Live shows</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="worship"><span>Church / worship</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="online"><span>Online / streaming</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">06</span>How often do you play live?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="live" value="never"><span>Never</span></label>
+              <label class="choice"><input type="radio" name="live" value="few-a-year"><span>A few times a year</span></label>
+              <label class="choice"><input type="radio" name="live" value="monthly"><span>Monthly</span></label>
+              <label class="choice"><input type="radio" name="live" value="weekly"><span>Weekly or more</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">07</span>What styles do you play? <span class="q-hint">Tick all that apply</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="styles" value="rock"><span>Rock</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="blues"><span>Blues</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="metal"><span>Metal</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="punk"><span>Punk</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="indie"><span>Indie / alternative</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="country"><span>Country</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="jazz"><span>Jazz</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="funk-soul"><span>Funk / soul</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="pop"><span>Pop</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="worship"><span>Worship</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="ambient"><span>Ambient / experimental</span></label>
+              <label class="choice"><input type="checkbox" name="styles" value="other"><span>Other</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">08</span>Where are you?</legend>
+            <p class="q-hint">This helps us decide which countries' certifications are worth paying for.</p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="region" value="us"><span>United States</span></label>
+              <label class="choice"><input type="radio" name="region" value="canada"><span>Canada</span></label>
+              <label class="choice"><input type="radio" name="region" value="uk"><span>United Kingdom</span></label>
+              <label class="choice"><input type="radio" name="region" value="eu"><span>European Union</span></label>
+              <label class="choice"><input type="radio" name="region" value="au-nz"><span>Australia / New Zealand</span></label>
+              <label class="choice"><input type="radio" name="region" value="elsewhere"><span>Somewhere else</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">09</span><label for="comments">Anything else you'd like us to know?</label></legend>
+            <textarea id="comments" name="comments" rows="5" maxlength="2000" placeholder="Optional"></textarea>
+          </fieldset>
+
+          <div class="buttons">
+            <button class="button" type="submit">Send my answers</button>
+            <a class="button ghost" href="opinion.html#surveys">Back to all surveys</a>
+          </div>
+        </form>
       </div>
     </section>
   </main>

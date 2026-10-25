@@ -299,3 +299,92 @@ ul.ticks li::before {
 @media (max-width: 720px) {
   .spec.costs td { font-size: 0.85rem; padding-right: 10px; }
 }
+#how-it-works { scroll-margin-top: 70px; }
+.status.open { color: var(--text); border-color: var(--signal); }
+.status.open::before { background: var(--signal); }
+
+/* Survey forms */
+
+.survey form { max-width: 760px; }
+.question {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 20px 24px 24px;
+  margin: 0 0 20px;
+  min-width: 0;
+}
+.question legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 14px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.question legend .num { margin-bottom: 4px; }
+.question legend label { cursor: default; }
+.question legend + * { clear: both; }
+.q-hint { display: block; font-weight: 400; font-size: 0.85rem; color: var(--muted); margin: 2px 0 12px; clear: both; }
+.question legend .q-hint { margin-bottom: 0; }
+
+.choices { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(210px, 100%), 1fr)); gap: 8px; }
+.choice { display: block; cursor: pointer; }
+.choice input { position: absolute; opacity: 0; pointer-events: none; }
+.choice span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+.choice span::before {
+  content: "";
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--muted);
+  border-radius: 3px;
+}
+.choice input[type="radio"] + span::before { border-radius: 50%; }
+.choice:hover span { border-color: var(--muted); color: var(--text); }
+.choice input:checked + span { border-color: var(--copper); color: var(--text); }
+.choice input:checked + span::before { border-color: var(--copper); background: var(--copper); box-shadow: inset 0 0 0 2.5px var(--surface-2); }
+.choice input:focus-visible + span { outline: 2px solid var(--copper-soft); outline-offset: 2px; }
+
+.question textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+.question textarea:focus { outline: 2px solid var(--copper-soft); outline-offset: 1px; border-color: var(--copper); }
+
+button.button { font: inherit; font-weight: 600; cursor: pointer; }
+.survey .buttons { margin-top: 28px; }
+
+/* Shown only when the server sends the visitor back with #empty or #failed */
+.form-error { display: none; max-width: 760px; }
+.form-error:target {
+  display: block;
+  border-left: 3px solid var(--copper);
+  background: var(--surface);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 720px) {
+  .question { padding: 16px 16px 20px; }
+}
