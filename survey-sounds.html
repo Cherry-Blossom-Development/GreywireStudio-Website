@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>What sounds cool to you · Greywire Studio</title>
-  <meta name="description" content="What sounds cool to you: a Greywire Studio survey, coming soon.">
+  <meta name="description" content="A short, anonymous survey about the guitar sounds you love and the pedals you want next. Your answers help Greywire Studio decide what to build.">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,12 +34,118 @@
       <div class="wrap">
         <p class="eyebrow">Your Opinion · Survey</p>
         <h1>What sounds cool to you</h1>
-        <p><span class="status">Coming soon</span></p>
-        <p class="lead">This survey isn't ready yet. It will ask about the tones, styles and effects you'd like to hear from a pedal.</p>
-        <p class="muted">Like every Greywire survey, your answers will be used only by us to decide what to build. They're never sold or shared, and they aren't tied to your name.</p>
-        <div class="buttons">
-          <a class="button ghost" href="opinion.html#surveys">Back to all surveys</a>
-        </div>
+        <p class="lead">Nine quick questions about the sounds you love and the pedals you'd like us to make. Every question is optional, so skip anything you'd rather not answer.</p>
+        <p class="muted">Your answers are used only by Greywire Studio, never sold or shared, and aren't tied to your name. <a href="opinion.html#how-it-works">How we keep the numbers honest</a></p>
+      </div>
+    </section>
+
+    <section class="section survey">
+      <div class="wrap">
+        <p class="form-error" id="empty">Nothing was answered, so nothing was saved. Pick at least one answer, then send it again.</p>
+        <p class="form-error" id="failed">Sorry, your answers couldn't be saved. Please try sending them again in a minute.</p>
+        <form method="post" action="/api/surveys/sounds">
+          <fieldset class="question">
+            <legend><span class="num">01</span>Which guitar sounds do you love? <span class="q-hint">Tick all that apply</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="sounds" value="clean"><span>Clean and sparkly</span></label>
+              <label class="choice"><input type="checkbox" name="sounds" value="edge"><span>Just breaking up</span></label>
+              <label class="choice"><input type="checkbox" name="sounds" value="crunch"><span>Classic rock crunch</span></label>
+              <label class="choice"><input type="checkbox" name="sounds" value="high-gain"><span>High-gain metal</span></label>
+              <label class="choice"><input type="checkbox" name="sounds" value="fuzz"><span>Thick, woolly fuzz</span></label>
+              <label class="choice"><input type="checkbox" name="sounds" value="ambient"><span>Ambient and washy</span></label>
+              <label class="choice"><input type="checkbox" name="sounds" value="twang"><span>Twangy country</span></label>
+              <label class="choice"><input type="checkbox" name="sounds" value="funk"><span>Funky clean</span></label>
+              <label class="choice"><input type="checkbox" name="sounds" value="lo-fi"><span>Lo-fi and broken</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">02</span>How much gain do you usually use?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="gain" value="none"><span>None, I play clean</span></label>
+              <label class="choice"><input type="radio" name="gain" value="little"><span>A little, just breaking up</span></label>
+              <label class="choice"><input type="radio" name="gain" value="medium"><span>Medium crunch</span></label>
+              <label class="choice"><input type="radio" name="gain" value="lots"><span>A lot, high gain</span></label>
+              <label class="choice"><input type="radio" name="gain" value="fuzz"><span>Fuzz on everything</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">03</span>Which classic sounds would you want from a pedal? <span class="q-hint">Tick all that apply</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="eras" value="60s-fuzz"><span>60s fuzz</span></label>
+              <label class="choice"><input type="checkbox" name="eras" value="70s-rock"><span>70s rock distortion</span></label>
+              <label class="choice"><input type="checkbox" name="eras" value="80s-metal"><span>80s hard rock and metal</span></label>
+              <label class="choice"><input type="checkbox" name="eras" value="90s-grunge"><span>90s grunge</span></label>
+              <label class="choice"><input type="checkbox" name="eras" value="modern-metal"><span>Modern high gain</span></label>
+              <label class="choice"><input type="checkbox" name="eras" value="blues"><span>Blues overdrive</span></label>
+              <label class="choice"><input type="checkbox" name="eras" value="shoegaze"><span>Shoegaze wall of sound</span></label>
+              <label class="choice"><input type="checkbox" name="eras" value="surf"><span>Surf tremolo and reverb</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">04</span>Which pedals would you like us to make next? <span class="q-hint">Tick all that apply</span></legend>
+            <p class="q-hint">The first four are named and in planning; the rest are ideas. Names are working names. <a href="ideas.html">More about each one</a></p>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="pedals" value="tap-changer"><span>Tap Changer clean boost</span></label>
+              <label class="choice"><input type="checkbox" name="pedals" value="three-phase"><span>Three Phase phaser</span></label>
+              <label class="choice"><input type="checkbox" name="pedals" value="rolling-blackout"><span>Rolling Blackout tremolo</span></label>
+              <label class="choice"><input type="checkbox" name="pedals" value="double-circuit"><span>Double Circuit chorus</span></label>
+              <label class="choice"><input type="checkbox" name="pedals" value="overdrive"><span>Overdrive</span></label>
+              <label class="choice"><input type="checkbox" name="pedals" value="fuzz"><span>Fuzz</span></label>
+              <label class="choice"><input type="checkbox" name="pedals" value="octave-fuzz"><span>Octave fuzz</span></label>
+              <label class="choice"><input type="checkbox" name="pedals" value="compressor"><span>Compressor</span></label>
+              <label class="choice"><input type="checkbox" name="pedals" value="envelope"><span>Envelope filter</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">05</span>How do you feel about pedals that change settings by themselves for each part of a song?</legend>
+            <p class="q-hint">For example: a light crunch in the verse, more gain in the chorus, and tremolo locked to the song's tempo in the bridge, without touching a switch.</p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="linked" value="not-for-me"><span>Not for me</span></label>
+              <label class="choice"><input type="radio" name="linked" value="maybe"><span>Could be handy</span></label>
+              <label class="choice"><input type="radio" name="linked" value="want"><span>I want that</span></label>
+              <label class="choice"><input type="radio" name="linked" value="must"><span>I'd buy a pedal for that alone</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">06</span>How much does analog matter to you?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="analog" value="only"><span>Analog only</span></label>
+              <label class="choice"><input type="radio" name="analog" value="prefer"><span>I prefer analog</span></label>
+              <label class="choice"><input type="radio" name="analog" value="dont-care"><span>I don't mind, if it sounds good</span></label>
+              <label class="choice"><input type="radio" name="analog" value="digital"><span>I prefer digital for its flexibility</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">07</span>How many knobs do you like on a pedal?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="knobs" value="one-two"><span>One or two, keep it simple</span></label>
+              <label class="choice"><input type="radio" name="knobs" value="three-four"><span>Three or four</span></label>
+              <label class="choice"><input type="radio" name="knobs" value="lots"><span>Lots, I like to tweak</span></label>
+              <label class="choice"><input type="radio" name="knobs" value="app"><span>A few, with deeper settings in an app</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">08</span><label for="tone">Name a guitar tone you love: a player, a song or an album</label></legend>
+            <textarea id="tone" name="tone" rows="2" maxlength="300" placeholder="Optional"></textarea>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">09</span><label for="comments">Anything else you'd like to hear from a pedal?</label></legend>
+            <textarea id="comments" name="comments" rows="5" maxlength="2000" placeholder="Optional"></textarea>
+          </fieldset>
+
+          <div class="buttons">
+            <button class="button" type="submit">Send my answers</button>
+            <a class="button ghost" href="opinion.html#surveys">Back to all surveys</a>
+          </div>
+        </form>
       </div>
     </section>
   </main>
