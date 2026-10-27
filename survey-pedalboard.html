@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your pedalboard · Greywire Studio</title>
+  <meta name="description" content="A short, anonymous survey about your pedalboard and what you want a pedal to look like. Your answers help Greywire Studio decide pedal size, jack placement, bypass and finish.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="32" height="32">Greywire <span>Studio</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="linework.html">Linework</a>
+        <a href="flashover.html">Flashover</a>
+        <a href="switchyard.html">Switchyard</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="opinion.html" aria-current="page">Your Opinion</a>
+        <a href="about.html">About</a>
+        <a href="https://community.greywirestudio.com/">Community</a>
+        <a class="nav-signin" href="https://community.greywirestudio.com/login">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <p class="eyebrow">Your Opinion · Survey</p>
+        <h1>Your pedalboard</h1>
+        <p class="lead">Ten quick questions about your board, how you connect your pedals, and what you want them to look like. Every question is optional, so skip anything you'd rather not answer.</p>
+        <p class="muted">Your answers are used only by Greywire Studio, never sold or shared, and aren't tied to your name. <a href="opinion.html#how-it-works">How we keep the numbers honest</a></p>
+      </div>
+    </section>
+
+    <section class="section survey">
+      <div class="wrap">
+        <p class="form-error" id="empty">Nothing was answered, so nothing was saved. Pick at least one answer, then send it again.</p>
+        <p class="form-error" id="failed">Sorry, your answers couldn't be saved. Please try sending them again in a minute.</p>
+        <form method="post" action="/api/surveys/pedalboard">
+          <fieldset class="question">
+            <legend><span class="num">01</span>How much room is left on your board?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="room" value="no-board"><span>I don't use a board</span></label>
+              <label class="choice"><input type="radio" name="room" value="full"><span>None, it's full</span></label>
+              <label class="choice"><input type="radio" name="room" value="little"><span>Room for one more</span></label>
+              <label class="choice"><input type="radio" name="room" value="plenty"><span>Plenty of room</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">02</span>What size of pedal do you prefer?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="size" value="mini"><span>Mini, as small as possible</span></label>
+              <label class="choice"><input type="radio" name="size" value="standard"><span>Standard, like most pedals</span></label>
+              <label class="choice"><input type="radio" name="size" value="bigger"><span>Bigger is fine if it's easier to use</span></label>
+              <label class="choice"><input type="radio" name="size" value="dont-mind"><span>I don't mind</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">03</span>Where do you want the jacks?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="jacks" value="top"><span>On top</span></label>
+              <label class="choice"><input type="radio" name="jacks" value="sides"><span>On the sides</span></label>
+              <label class="choice"><input type="radio" name="jacks" value="dont-mind"><span>I don't mind</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">04</span>True bypass or buffered bypass?</legend>
+            <p class="q-hint">With true bypass, a switched-off pedal connects your guitar straight through to the next pedal. With a buffer, the signal passes through a small amplifier that keeps long cable runs from dulling your tone.</p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="bypass" value="true"><span>True bypass only</span></label>
+              <label class="choice"><input type="radio" name="bypass" value="buffer-ok"><span>A good buffer is fine</span></label>
+              <label class="choice"><input type="radio" name="bypass" value="buffer"><span>I prefer buffered</span></label>
+              <label class="choice"><input type="radio" name="bypass" value="dont-know"><span>I don't know the difference</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">05</span>Do you play in stereo?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="stereo" value="mono"><span>No, always mono</span></label>
+              <label class="choice"><input type="radio" name="stereo" value="someday"><span>Not yet, but I'd like to</span></label>
+              <label class="choice"><input type="radio" name="stereo" value="sometimes"><span>Sometimes</span></label>
+              <label class="choice"><input type="radio" name="stereo" value="always"><span>Always</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">06</span>Which phone do you use?</legend>
+            <p class="q-hint">Our pedals will link to a phone app, so we need to know which phones to build it for first.</p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="phone" value="iphone"><span>iPhone</span></label>
+              <label class="choice"><input type="radio" name="phone" value="android"><span>Android</span></label>
+              <label class="choice"><input type="radio" name="phone" value="other"><span>Something else, or no smartphone</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">07</span>If an app ran your board, where would your phone go on stage?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="phone-place" value="board-mount"><span>In a mount on the board</span></label>
+              <label class="choice"><input type="radio" name="phone-place" value="stand"><span>On a mic stand or music stand</span></label>
+              <label class="choice"><input type="radio" name="phone-place" value="pocket"><span>In my pocket or on the amp</span></label>
+              <label class="choice"><input type="radio" name="phone-place" value="not-on-stage"><span>I wouldn't use a phone on stage</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">08</span>What looks do you like on a pedal? <span class="q-hint">Tick all that apply</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="looks" value="bare"><span>Bare or brushed metal</span></label>
+              <label class="choice"><input type="checkbox" name="looks" value="bold-color"><span>Bold, solid colors</span></label>
+              <label class="choice"><input type="checkbox" name="looks" value="artwork"><span>Detailed artwork</span></label>
+              <label class="choice"><input type="checkbox" name="looks" value="minimal"><span>Dark and minimal</span></label>
+              <label class="choice"><input type="checkbox" name="looks" value="vintage"><span>Vintage and retro</span></label>
+              <label class="choice"><input type="checkbox" name="looks" value="matching"><span>A matching look across a series</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">09</span>How bright should a pedal's lights be?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="leds" value="dim"><span>Dim, bright LEDs blind me</span></label>
+              <label class="choice"><input type="radio" name="leds" value="normal"><span>Normal</span></label>
+              <label class="choice"><input type="radio" name="leds" value="bright"><span>Bright enough to see outdoors</span></label>
+              <label class="choice"><input type="radio" name="leds" value="adjustable"><span>Adjustable</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">10</span><label for="comments">Anything else about your board, or what a pedal should look like?</label></legend>
+            <textarea id="comments" name="comments" rows="5" maxlength="2000" placeholder="Optional"></textarea>
+          </fieldset>
+
+          <div class="buttons">
+            <button class="button" type="submit">Send my answers</button>
+            <a class="button ghost" href="opinion.html#surveys">Back to all surveys</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Cherry Blossom Development. Product names are working names.</p>
+      <p><a href="https://github.com/Cherry-Blossom-Development/GreywireStudio">Design files on GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>

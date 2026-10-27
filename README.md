@@ -14,7 +14,7 @@ It's a plain static site: HTML and CSS, no build step and no JavaScript. The one
 | `switchyard.html` | Switchyard control pedal |
 | `ideas.html` | What's next: the four named pedals in planning, then further ideas by effect type |
 | `opinion.html` | Your Opinion: how the surveys work, the privacy promise, what a new product costs, and the list of surveys |
-| `survey-musician.html`, `survey-gear.html`, `survey-sounds.html`, `survey-buying.html` | The four survey forms: "What kind of musician are you", "What gear do you use", "What sounds cool to you" and "How you buy gear" |
+| `survey-musician.html`, `survey-gear.html`, `survey-sounds.html`, `survey-buying.html`, `survey-pedalboard.html` | The five survey forms: "What kind of musician are you", "What gear do you use", "What sounds cool to you", "How you buy gear" and "Your pedalboard" |
 | `survey-thanks.html` | Where a survey lands after it's sent |
 | `about.html` | The brand, where each product stands, link to the design files |
 | `404.html` | Page-not-found (uses root-relative links, so it works at any path) |
