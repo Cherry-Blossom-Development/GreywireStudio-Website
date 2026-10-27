@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How you buy gear · Greywire Studio</title>
+  <meta name="description" content="A short, anonymous survey about where and how you buy guitar pedals. Your answers help Greywire Studio decide prices, where to sell and how to fund the first pedals.">
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="img/logo.svg" alt="" width="32" height="32">Greywire <span>Studio</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="linework.html">Linework</a>
+        <a href="flashover.html">Flashover</a>
+        <a href="switchyard.html">Switchyard</a>
+        <a href="ideas.html">Ideas</a>
+        <a href="opinion.html" aria-current="page">Your Opinion</a>
+        <a href="about.html">About</a>
+        <a href="https://community.greywirestudio.com/">Community</a>
+        <a class="nav-signin" href="https://community.greywirestudio.com/login">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="wrap">
+        <p class="eyebrow">Your Opinion · Survey</p>
+        <h1>How you buy gear</h1>
+        <p class="lead">Eleven quick questions about where you buy pedals, what makes you pick one, and what you'd expect from a new maker. Every question is optional, so skip anything you'd rather not answer.</p>
+        <p class="muted">Your answers are used only by Greywire Studio, never sold or shared, and aren't tied to your name. <a href="opinion.html#how-it-works">How we keep the numbers honest</a></p>
+      </div>
+    </section>
+
+    <section class="section survey">
+      <div class="wrap">
+        <p class="form-error" id="empty">Nothing was answered, so nothing was saved. Pick at least one answer, then send it again.</p>
+        <p class="form-error" id="failed">Sorry, your answers couldn't be saved. Please try sending them again in a minute.</p>
+        <form method="post" action="/api/surveys/buying">
+          <fieldset class="question">
+            <legend><span class="num">01</span>Where do you buy pedals? <span class="q-hint">Tick all that apply</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="where" value="local-store"><span>A local music store</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="online-store"><span>Online music retailers</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="amazon"><span>Amazon</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="reverb"><span>Reverb or other gear marketplaces</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="maker"><span>Direct from the maker's website</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="local-used"><span>Used, locally (classifieds, Marketplace)</span></label>
+              <label class="choice"><input type="checkbox" name="where" value="trade"><span>Trades and swaps</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">02</span>New or used?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="condition" value="new"><span>Mostly new</span></label>
+              <label class="choice"><input type="radio" name="condition" value="mix"><span>About half and half</span></label>
+              <label class="choice"><input type="radio" name="condition" value="used"><span>Mostly used</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">03</span>Where do you hear about new gear? <span class="q-hint">Tick all that apply</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="discover" value="youtube"><span>YouTube demos and reviews</span></label>
+              <label class="choice"><input type="checkbox" name="discover" value="instagram"><span>Instagram</span></label>
+              <label class="choice"><input type="checkbox" name="discover" value="tiktok"><span>TikTok</span></label>
+              <label class="choice"><input type="checkbox" name="discover" value="forums"><span>Forums and Reddit</span></label>
+              <label class="choice"><input type="checkbox" name="discover" value="friends"><span>Friends and bandmates</span></label>
+              <label class="choice"><input type="checkbox" name="discover" value="store-staff"><span>Music store staff</span></label>
+              <label class="choice"><input type="checkbox" name="discover" value="artists"><span>Players I follow</span></label>
+              <label class="choice"><input type="checkbox" name="discover" value="print-podcasts"><span>Magazines and podcasts</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">04</span>What makes you buy a pedal? <span class="q-hint">Tick all that apply</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="decide" value="demo"><span>Hearing a good demo</span></label>
+              <label class="choice"><input type="checkbox" name="decide" value="try"><span>Trying it myself</span></label>
+              <label class="choice"><input type="checkbox" name="decide" value="reviews"><span>Reviews and ratings</span></label>
+              <label class="choice"><input type="checkbox" name="decide" value="price"><span>A good price or a sale</span></label>
+              <label class="choice"><input type="checkbox" name="decide" value="recommend"><span>A friend recommends it</span></label>
+              <label class="choice"><input type="checkbox" name="decide" value="artist"><span>A player I like uses it</span></label>
+              <label class="choice"><input type="checkbox" name="decide" value="build"><span>Build quality and warranty</span></label>
+              <label class="choice"><input type="checkbox" name="decide" value="small-maker"><span>Supporting a small maker</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">05</span>Would you preorder a pedal from a new, small maker?</legend>
+            <p class="q-hint">A preorder means paying now and getting the pedal when the first batch is built, usually a few months later.</p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="preorder" value="no"><span>No, I wait until it's out and reviewed</span></label>
+              <label class="choice"><input type="radio" name="preorder" value="discount"><span>Maybe, for a preorder discount</span></label>
+              <label class="choice"><input type="radio" name="preorder" value="refundable"><span>Yes, if I could cancel for a refund</span></label>
+              <label class="choice"><input type="radio" name="preorder" value="yes"><span>Yes, if I liked the demos</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">06</span>Have you backed a crowdfunding campaign for gear?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="crowdfund" value="never"><span>No, and I wouldn't</span></label>
+              <label class="choice"><input type="radio" name="crowdfund" value="maybe"><span>No, but I might</span></label>
+              <label class="choice"><input type="radio" name="crowdfund" value="once"><span>Once</span></label>
+              <label class="choice"><input type="radio" name="crowdfund" value="several"><span>More than once</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">07</span>What would you pay for a controller that switches your pedals for each part of a song?</legend>
+            <p class="q-hint">One pedal on the floor steps through your song, part by part, and sets every pedal on your board for each part. <a href="switchyard.html">More about Switchyard</a></p>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="controller-price" value="wouldnt-buy"><span>I wouldn't buy one</span></label>
+              <label class="choice"><input type="radio" name="controller-price" value="under-100"><span>Under $100</span></label>
+              <label class="choice"><input type="radio" name="controller-price" value="100-200"><span>$100–200</span></label>
+              <label class="choice"><input type="radio" name="controller-price" value="200-300"><span>$200–300</span></label>
+              <label class="choice"><input type="radio" name="controller-price" value="300-plus"><span>Over $300</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">08</span>Which would you rather buy?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="bundle" value="single"><span>One pedal at a time</span></label>
+              <label class="choice"><input type="radio" name="bundle" value="pair"><span>A pair of pedals at a discount</span></label>
+              <label class="choice"><input type="radio" name="bundle" value="set"><span>A full set with the controller, at a bigger discount</span></label>
+              <label class="choice"><input type="radio" name="bundle" value="no-preference"><span>No preference</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">09</span>How much does the warranty matter to you?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="warranty" value="not-much"><span>Not much, pedals rarely break</span></label>
+              <label class="choice"><input type="radio" name="warranty" value="one-year"><span>A year is fine</span></label>
+              <label class="choice"><input type="radio" name="warranty" value="two-three"><span>Two or three years</span></label>
+              <label class="choice"><input type="radio" name="warranty" value="lifetime"><span>A lifetime warranty would win me over</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">10</span>Would you build a pedal yourself from a kit?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="kit" value="no"><span>No, I want it ready to play</span></label>
+              <label class="choice"><input type="radio" name="kit" value="maybe"><span>Maybe, if it were simple</span></label>
+              <label class="choice"><input type="radio" name="kit" value="yes"><span>Yes, that sounds fun</span></label>
+              <label class="choice"><input type="radio" name="kit" value="already"><span>I already build pedals</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question">
+            <legend><span class="num">11</span><label for="comments">Anything else about how you buy gear?</label></legend>
+            <textarea id="comments" name="comments" rows="5" maxlength="2000" placeholder="Optional"></textarea>
+          </fieldset>
+
+          <div class="buttons">
+            <button class="button" type="submit">Send my answers</button>
+            <a class="button ghost" href="opinion.html#surveys">Back to all surveys</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Cherry Blossom Development. Product names are working names.</p>
+      <p><a href="https://github.com/Cherry-Blossom-Development/GreywireStudio">Design files on GitHub</a></p>
+    </div>
+  </footer>
+</body>
+</html>
